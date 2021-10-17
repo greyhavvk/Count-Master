@@ -86,28 +86,25 @@ public class StickmanController : MonoBehaviour
     {
         if (other.CompareTag("enemy"))
         {
-            if (_justOne)
-            {
-                KillEachOther(other);
-                _justOne = false;
-            }
+
+            KillEachOther(other);
+            _justOne = false;
+
         }
         if (other.CompareTag("fight"))
         {
-            if (_justOneAgain)
-            {
-                Fight();
-                other.GetComponent<EnemyController>().Fight(_stickman);
-                _justOneAgain = false;
-            }
+
+            Fight();
+            other.GetComponent<EnemyController>().Fight(_stickman);
+            _justOneAgain = false;
+
         }
         else if (other.CompareTag("barrier"))
         {
-            if (_justOne)
-            {
-                Dead();
-                _justOne = false;
-            }
+
+            Dead();
+            _justOne = false;
+
 
         }
         else if (other.CompareTag("panel"))

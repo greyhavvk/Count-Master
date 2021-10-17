@@ -69,7 +69,8 @@ public class Spawner : MonoBehaviour
             _object.transform.position = spawnPos;
 
             _object.transform.parent = _middlePoint;
-            _object.GetComponent<NavMeshAgent>().SetDestination(_middlePoint.position);
+            if (_object.GetComponent<NavMeshAgent>().isOnNavMesh)
+                _object.GetComponent<NavMeshAgent>().SetDestination(_middlePoint.position);
 
         }
     }
